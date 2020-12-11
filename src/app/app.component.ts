@@ -83,11 +83,11 @@ export class AppComponent implements OnInit {
     ],
     tooltip: {
       // pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
-      split: true,
+      shared: true,
       formatter: function(tooltip) {
         var s = '';
-        tooltip.chart.series.forEach((el, index) => {
-          console.log(el);
+        this.points.forEach((el, index) => {
+          console.log(index);
           s += `<span>${el.name}</span>: <b></b><br>`;
           // s += `<span style="color:${el.color}">${el.name}</span>: <b>${el.chart.series[index].point.y}</b><br>`
         });
