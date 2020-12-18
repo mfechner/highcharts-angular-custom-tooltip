@@ -130,35 +130,35 @@ export class AppComponent implements OnInit {
 
     // Sample data
     temperature.push({
-      x: new Date('2020-12-01 00:00:00'),
+      x: new Date('2020-12-01 00:00:00').getTime(),
       y: 5
     });
     temperature.push({
-      x: new Date('2020-12-01 00:05:00'),
+      x: new Date('2020-12-01 00:05:00').getTime(),
       y: 7
     });
     temperature.push({
-      x: new Date('2020-12-01 00:10:00'),
+      x: new Date('2020-12-01 00:10:00').getTime(),
       y: 8
     });
     temperature.push({
-      x: new Date('2020-12-01 00:15:00'),
+      x: new Date('2020-12-01 00:15:00').getTime(),
       y: 10
     });
     channelADCPower.push({
-      x: new Date('2020-12-01 00:00:00'),
+      x: new Date('2020-12-01 00:00:00').getTime(),
       y: 2413
     });
     channelADCPower.push({
-      x: new Date('2020-12-01 00:05:00'),
+      x: new Date('2020-12-01 00:05:00').getTime(),
       y: 2620
     });
     channelADCPower.push({
-      x: new Date('2020-12-01 00:10:00'),
+      x: new Date('2020-12-01 00:10:00').getTime(),
       y: 2513
     });
     channelADCPower.push({
-      x: new Date('2020-12-01 00:15:00'),
+      x: new Date('2020-12-01 00:15:00').getTime(),
       y: 2920
     });
 
