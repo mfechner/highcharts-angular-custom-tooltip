@@ -11,23 +11,7 @@ declare global {
     moment: any;
   }
 }
-window.moment = Moment;
-mTZ();
 
-ExportingModule(Highcharts);
-Highcharts.setOptions({
-  title: {
-    style: {
-      color: 'tomato'
-    }
-  },
-  time: {
-    timezone: 'Europe/Berlin'
-  },
-  legend: {
-    enabled: true
-  }
-});
 
 @Component({
   selector: 'app-root',
@@ -86,11 +70,13 @@ export class AppComponent implements OnInit {
       shared: true,
       formatter: function(tooltip) {
         var s = '';
-        this.points.forEach((el, index) => {
-          console.log(index);
-          s += `<span>${el.name}</span>: <b></b><br>`;
-          // s += `<span style="color:${el.color}">${el.name}</span>: <b>${el.chart.series[index].point.y}</b><br>`
-        });
+        if (this.points) {
+          this.points.forEach((el: any, index) => {
+            console.log(index);
+            s += `<span>${el.name}</span>: <b></b><br>`;
+            // s += `<span style="color:${el.color}">${el.name}</span>: <b>${el.chart.series[index].point.y}</b><br>`
+          });
+        }
         return s;
       }
     },
@@ -116,6 +102,27 @@ export class AppComponent implements OnInit {
   updateFlag = false;
   oneToOneFlag = true;
   runOutsideAngularFlag = false;
+
+  constructor() {
+    window.moment = Moment;
+    mTZ();
+
+    ExportingModule(Highcharts);
+    Highcharts.setOptions({
+      title: {
+        style: {
+          color: 'tomato'
+        }
+      },
+      time: {
+        timezone: 'Europe/Berlin'
+      },
+      legend: {
+        enabled: true
+      }
+    });
+
+  }
 
   ngOnInit() {
     const temperature: any[] = [];
