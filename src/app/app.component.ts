@@ -72,9 +72,7 @@ export class AppComponent implements OnInit {
         var s = '';
         if (this.points) {
           this.points.forEach((el: any, index) => {
-            console.log(index);
-            s += `<span>${el.name}</span>: <b></b><br>`;
-            // s += `<span style="color:${el.color}">${el.name}</span>: <b>${el.chart.series[index].point.y}</b><br>`
+            s += `<span style="color:${el.color}">${el.series.name}</span>: <b>${el.y}</b><br>`
           });
         }
         return s;
